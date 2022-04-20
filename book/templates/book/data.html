@@ -1,0 +1,32 @@
+{% extends 'book/base.html' %}
+{% load static %}
+{% block title %} Books {% endblock title %}
+
+{% block content %}
+<header class=" bg-primary text-white py-3">
+    <div class="container ">
+        <h2 class="logo"><a href="/"  style="text-decoration: none; color: white;">e-Book </a> <i class="fa-regular fa-books"></i></h2>
+    </div>
+</header>
+
+<div class="container py-4">
+    {% if messages %}
+{% for messages in messages %}
+<p class="alert alert-danger">{{messages}}</p>
+{% endfor %}
+{% endif %}
+</div>
+
+
+
+
+<form action="" method="POST" enctype="multipart/form-data" class="container py-5"> {% csrf_token %}
+    <label for="name">Book Name :</label>
+    <input type="text" name="name" id="name" class="form-control">
+    <br>
+    <input type="file" name="file" class="form-control">
+    <br>
+    <input type="submit" value="POST" class="btn btn-primary">
+    <a href="{% url 'all' %}" class="btn btn-secondary">ALL BOOKS</a>
+</form>
+{% endblock content %}

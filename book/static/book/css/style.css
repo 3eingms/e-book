@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
+
+header{
+    background: #0099F7;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #F11712, #0099F7);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #F11712, #0099F7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+.logo {
+    font-family: 'Kanit', sans-serif;
+}
+
+section {
+    background-color: #f0f6fb;
+    padding: 1rem 0;
+}
+
+.btns {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    flex-direction: column;
+    gap: 2rem;
+    font-family: 'Kanit', sans-serif;
+    
+}
+ /* .btns a:hover{
+     box-shadow: 2px 3px 11px -2px black; 
+}  */
+
+.img-contain {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.img-contain img{
+    width: 100%;
+}
+
+.logo a{
+    text-decoration: none;
+}
