@@ -11,6 +11,12 @@
     </div>
 </header>
 
+
+<div class="text-center container py-4">
+    <h2 class="alert alert-secondary shadow-sm">e-Book - <u>LOGIN</u></h2>
+</div>
+
+
     <form action="" method="POST" class="container my-5"> {% csrf_token %}
         {% for fm in fm %}
             {{fm.label_tag}} {{fm}} {{fm.errors|striptags}} <br>

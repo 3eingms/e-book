@@ -6,12 +6,21 @@
 {% block content %}
 <header class=" bg-primary text-white py-3">
     <div class="container ">
-        <h2 class="logo"><a href="/" style="text-decoration: none; color: white;">e-Book </a> <i class="class=" fas fa-search"></i></h2>
+        <h2 class="logo"><a href="/" style="text-decoration: none; color: white;">e-Book </a> <i class="class=" fas
+                fa-search"></i></h2>
     </div>
 </header>
 
+
 <section>
     <div class="container">
+
+        {% if messages %}
+        {% for messages in messages %}
+        <p class="alert alert-danger">{{messages}}</p>
+        {% endfor %}
+        {% endif %}
+
         <div class="row gap-4">
             <div class="col-sm-5 img-contain">
                 <img src="{% static 'book/img/img1.jpg/' %}" alt="">
@@ -19,8 +28,15 @@
             <div class="col-sm-5 btns">
                 <h1> ALL BOOKS ARE FREE OF COST IF YOU WANT READ <span class="text-danger"><u> create an
                             account</u></span></h1>
+                {% if user.is_authenticated %}
+                <a href="{% url 'data' %}" class="btn btn-primary" title="login">POST BOOK</a>
+                <a href="{% url 'logout' %}" class="btn btn-danger" title="signup">LOGOUT</a>
+                {% endif %}
+
+                {% if not user.is_authenticated %}
                 <a href="{% url 'login' %}" class="btn btn-primary" title="login">LOGIN</a>
                 <a href="{% url 'signup' %}" class="btn btn-danger" title="signup">SIGNUP</a>
+                {% endif %}
             </div>
 
         </div>

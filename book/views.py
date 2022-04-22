@@ -50,6 +50,7 @@ def loginn(request):
 
 def logouts(request):
     logout(request)
+    messages.success(request,'logout successfully! visit again.')
     return HttpResponseRedirect('/')
 
 # for posting books

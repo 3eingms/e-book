@@ -22,6 +22,7 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.home,name = 'home'),
+    path('home/',views.home,name = 'home'),
     path('signup/',views.signup_user,name = 'signup'), 
     path('login/',views.loginn,name = 'login'),
     path('logout/',views.logouts,name = 'logout'),
@@ -30,3 +31,6 @@ urlpatterns = [
     path('delete/<int:id>/',views.delete_book,name = 'delete'),
 
 ]+ static(settings.MEDIA_URL,document_root = settings.MEDIA_ROOT)
+
+
+#  mudassirsayyed.pythonanywhere.com.
